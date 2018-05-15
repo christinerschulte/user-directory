@@ -1,7 +1,8 @@
 const button = document.querySelector('button.greeting')
-function changeText(ev){
+const heading = document.querySelector('h1')
+function changeText(){
     //use debbuger to pause execution and work in console
-    ev.target.textContent = 'Clickity click'
+    heading.textContent = 'Different heading'
     /*const paragraph = document.querySelector('p.greeting')
 
     //this works only when dealing with text
