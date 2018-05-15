@@ -1,3 +1,18 @@
 body {
     font-family: sans-serif;
 }
+
+#myForm{
+    margin: 0 auto;
+    width: 450px;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+}
+
+#headOne, #input, #button{
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px;
+}
