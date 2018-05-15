@@ -7,9 +7,9 @@ const handleSubmit = function(ev){
     const userName = f.newText.value
     const age = f.age.value
     users.innerHTML += '<p>' + userName + ', ' + age + '</p>'
-    f.newText.value = ''
+   
 
-
+    f.reset()
     
 }
 
