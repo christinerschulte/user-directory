@@ -10,6 +10,7 @@ const handleSubmit = function(ev){
    
 
     f.reset()
+    f.newText.focus()
     
 }
 
