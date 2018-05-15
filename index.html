@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>User Directory</h1>
+    
 
-    <h1 id="headTwo">Second Heading</h1>
+    <form id="myForm" action = "" method = "GET">
+            <h1 id="headOne">User Directory</h1>
+        <div>
+           <label for="changeText">What would you like the heading to say?</label>
+           <input type="text" id="changeText" name="newText"> 
+        </div>
 
-    <h3>Third Heading</h3>
-
-    <h2>Fourth Heading</h2>
-
-    <p class="greeting">Welcome, friends</p>
-
-
-    <button class="greeting">Change Text</button>
-
-
+        
+            <button type="button" onclick="changeHead(this.form)">Change Heading</button>
+    
+    </form>
+    
     <script src="index.js"></script>
 </body>
 </html>
