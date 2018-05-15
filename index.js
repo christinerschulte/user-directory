@@ -1,13 +1,13 @@
 const form = document.querySelector('#myForm')
 
-const changeHead = function(ev){
+const handleSubmit = function(ev){
     ev.preventDefault()
-    const heading = document.querySelector("#headOne")
+    const users = document.querySelector("#users")
     const f = ev.target
-    const newText = f.newText.value
-    heading.textContent = newText
+    const userName = f.newText.value
+    users.textContent += ' ' + userName
 
     
 }
 
-form.addEventListener('submit', changeHead)
+form.addEventListener('submit', handleSubmit)
