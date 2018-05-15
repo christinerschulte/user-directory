@@ -6,7 +6,10 @@ const handleSubmit = function(ev){
     const f = ev.target
     const userName = f.newText.value
     const age = f.age.value
-    users.innerHTML += `<p>${userName}, ${age}</p>`
+    const p = document.createElement('p')
+    p.textContent = `${userName}, ${age}`
+
+    users.appendChild(p)
    
 
     f.reset()
