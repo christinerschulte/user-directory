@@ -10,8 +10,12 @@ const renderColor = function(color){
 
 const renderListItem = function(listItem, label){
     const item = document.createElement('li')
-    item.textContent = `${label}: ${listItem}`
-
+    if(label === 'Favorite Color'){
+        item.textContent = `${label}:`
+        item.appendChild(renderColor(listItem))
+    } else {
+        item.textContent = `${label}: ${listItem}`
+    }
     return item
 }
 
@@ -23,10 +27,10 @@ const handleSubmit = function(ev){
     const age = f.age.value
     const favColor = f.favoriteColor.value
    
-    const colorItem = document.createElement('li')
-    colorItem.textContent = 'Favorite Color: '
+    // const colorItem = document.createElement('li')
+    // colorItem.textContent = 'Favorite Color: '
     
-    colorItem.appendChild(renderColor(favColor))
+    // colorItem.appendChild(renderColor(favColor))
 
     const list = document.createElement('ul')
 
@@ -34,7 +38,7 @@ const handleSubmit = function(ev){
     //try not to user innerHTML
     list.appendChild(renderListItem(userName, document.querySelector("label[for='newText']").textContent))
     list.appendChild(renderListItem(age, document.querySelector("label[for='age']").textContent))
-    list.appendChild(colorItem)
+    list.appendChild(renderListItem(favColor,document.querySelector("label[for='favoriteColor']").textContent))
 
     users.appendChild(list)
 
