@@ -8,6 +8,13 @@ const renderColor = function(color){
     return colorDiv
 }
 
+const renderListItem = function(listItem, label){
+    const item = document.createElement('li')
+    item.textContent = `${label}: ${listItem}`
+
+    return item
+}
+
 const handleSubmit = function(ev){
     ev.preventDefault()
     const users = document.querySelector("#users")
@@ -15,37 +22,23 @@ const handleSubmit = function(ev){
     const userName = f.newText.value
     const age = f.age.value
     const favColor = f.favoriteColor.value
-
-    //Bonus-render list item function to make each list item--create li stuff
-    //will need to pass in arguments
-    const nameItem = document.createElement('li')
-    nameItem.textContent = `Name: ${userName}`
-
-    const ageItem = document.createElement('li')
-    ageItem.textContent = `Age: ${age}`
    
     const colorItem = document.createElement('li')
     colorItem.textContent = 'Favorite Color: '
-
-    //HW-turn these lines into different function
-    // const colorDiv = document.createElement('div')
-    // colorDiv.style.backgroundColor = favColor
-    // colorDiv.style.width = '6rem'
-    // colorDiv.style.height = '3rem'
     
-    //call HW function here
     colorItem.appendChild(renderColor(favColor))
 
     const list = document.createElement('ul')
 
     //super mega bonus - build list in seperate function
     //try not to user innerHTML
-    list.appendChild(nameItem)
-    list.appendChild(ageItem)
+    list.appendChild(renderListItem(userName, document.querySelector("label[for='newText']").textContent))
+    list.appendChild(renderListItem(age, document.querySelector("label[for='age']").textContent))
     list.appendChild(colorItem)
 
     users.appendChild(list)
-   
+
+ 
 
     f.reset()
     f.newText.focus()
