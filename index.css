@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
 body {
-    font-family: sans-serif;
+    font-family: 'Slabo 27px', serif;
 }
 
-form{
+
+
+
+
+
+/*form{
     margin: 0 auto;
     width: 450px;
     padding: 1rem;
@@ -18,4 +25,4 @@ h1{
 
 #name{
   margin: 1rem auto;
-}
+}*/
