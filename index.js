@@ -19,13 +19,15 @@ const renderListItem = function(listItem, label){
     return item
 }
 
-// const renderList = function(userName, nameLabel, age, ageLabel, favColor, colorLabel){
-//     const list = document.createElement('ul')
-//     list.appendChild(renderListItem(userName, 'Name'))
-//     list.appendChild(renderListItem(age, 'Age'))
-//     list.appendChild(renderListItem(favColor,'Favorite Color'))
-//     return list
-// }
+const renderList = function(data){
+    const list = document.createElement('ul')
+    const labels = Object.keys(data)
+    labels.forEach(function(label){
+       const item = renderListItem(data[label], label)
+       list.appendChild(item)
+    })
+    return list   
+}
 
 const handleSubmit = function(ev){
     ev.preventDefault()
@@ -37,18 +39,8 @@ const handleSubmit = function(ev){
         favColor: renderColor(f.favoriteColor.value),
     }
 
-    const list = document.createElement('ul')
-
-    const labels = Object.keys(user)
-    labels.forEach(function(label){
-       const item = renderListItem(user[label], label)
-       list.appendChild(item)
-    })
-   
     const users = document.querySelector("#users")
-   // users.appendChild(renderList(userName, 'Name', age, 'Age', renderColor(favColor), 'Favorite Color'))
-
-   users.appendChild(list)
+     users.appendChild(renderList(user))
  
 
     f.reset()
