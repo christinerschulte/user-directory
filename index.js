@@ -10,17 +10,25 @@ const renderColor = function(color){
 
 const renderListItem = function(listItem, label){
     const item = document.createElement('li')
-    item.textContent = `${label}: `
+
+    const term = document.createElement('dt')
+    term.textContent = label
+
+    const description = document.createElement('dd')
+
     try {
-        item.appendChild(listItem)
+        description.appendChild(listItem)
     } catch(e) {
-        item.textContent += listItem
+        description.textContent += listItem
     }
+
+    item.appendChild(term)
+    item.appendChild(description)
     return item
 }
 
 const renderList = function(data){
-    const list = document.createElement('ul')
+    const list = document.createElement('dl')
     const labels = Object.keys(data)
     labels.forEach(label => {
        const item = renderListItem(data[label], label)
