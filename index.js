@@ -22,7 +22,7 @@ const renderListItem = function(listItem, label){
 const renderList = function(data){
     const list = document.createElement('ul')
     const labels = Object.keys(data)
-    labels.forEach(function(label){
+    labels.forEach(label => {
        const item = renderListItem(data[label], label)
        list.appendChild(item)
     })
@@ -32,7 +32,6 @@ const renderList = function(data){
 const handleSubmit = function(ev){
     ev.preventDefault()
     const f = ev.target
-
     const user = {
         userName: f.newText.value,
         age: f.age.value,
@@ -42,10 +41,8 @@ const handleSubmit = function(ev){
     const users = document.querySelector("#users")
      users.appendChild(renderList(user))
  
-
     f.reset()
-    f.newText.focus()
-    
+    f.newText.focus()  
 }
 
 form.addEventListener('submit', handleSubmit)
